@@ -26,6 +26,43 @@
 
     app.listen(3000)
 
+### styles and scripts
+If you like to place scripts in your view, you can do it like this:
+
+With a layout
+
+    <html>
+    <body>
+	<%- style %>
+    <%- body %>
+    <%- script %>
+    </body>
+	</html>
+
+Renders
+
+	<link src='render.css' />
+    <script src='render.js'><script>
+	<div>
+		somethingsomething
+    </div>
+
+use:
+
+    req.render('view')
+	
+result:
+    <html>
+    <body>
+	<link src='render.css' />
+    <div>
+		somethingsomething
+    </div>  
+    </body>
+	<script src='render.js'><script>
+	</html>
+	
+	
 ### contentFor
 
 A view
@@ -45,41 +82,5 @@ Renders
 
     fight club
     somebody
-
-### script blocks extraction
-If you like to place all the script blocks at the end, you can do it like this:
-
-    app.set("layout extractScripts", true)
-
-A view
-
-    something<script>somejs<script>something
-
-With a layout
-
-    ...
-    <body>
-    <%- body %>
-    <%- script %>
-    </body>
-
-Renders
-
-    ...
-    <body>
-    somethingsomething
-    <script>somejs<script>
-    </body>
-
-Enabling invididually:
-
-    req.render('view', { parseScript: true })
-
-## Running tests
-Clone the rep
-
-    make test
-
-## License
 
 MIT
