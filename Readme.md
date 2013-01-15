@@ -7,12 +7,12 @@
 [![build status](https://secure.travis-ci.org/Soarez/express-ejs-layouts.png)](http://travis-ci.org/Soarez/express-ejs-layouts)
 
 ## Installation
-    npm install express-ejs-layouts
+    npm install express3-ejs-layout
 
 ## Usage
     var express = require('express')
       , app = express()
-      , expressLayouts = require('express-ejs-layouts')
+      , expressLayouts = require('express3-ejs-layout')
     
     app.set('view engine', 'ejs')
     app.set('layout', 'myLayout') // defaults to 'layout'     
