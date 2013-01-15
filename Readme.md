@@ -29,37 +29,44 @@
 ### styles and scripts
 If you like to place scripts in your view, you can do it like this:
 
-With a layout
+layout.html
 
     <html>
-    <body>
+	<title><%= title %><title>
+	<link src='main.css' />
 	<%- style %>
+    <body>	
     <%- body %>
+	<script src='main.js'><script>
     <%- script %>
     </body>
 	</html>
 
-Renders
+render.html
 
 	<link src='render.css' />
     <script src='render.js'><script>
 	<div>
-		somethingsomething
+		something
     </div>
 
-use:
+render.js
 
-    req.render('view')
+    req.render('render',{title:'render'})
 	
 result:
+
     <html>
-    <body>
+	<title>render</title>
+	<link src='main.css' />	
 	<link src='render.css' />
+    <body>
     <div>
-		somethingsomething
-    </div>  
-    </body>
+		something
+    </div>
+	<script src='main.js'><script>
 	<script src='render.js'><script>
+    </body>
 	</html>
 	
 	
