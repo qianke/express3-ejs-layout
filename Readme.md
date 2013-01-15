@@ -1,6 +1,6 @@
 
 
-# express-ejs-layouts
+# express3-ejs-layout
 
 #### *Layout support for ejs in express.*
 
